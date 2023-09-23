@@ -22,7 +22,6 @@ run_main.bat
 *.csv
 *.pkl
 *.exe
-*.zip
 *.ttf
 *.key
 *.sln
