@@ -36,7 +36,8 @@ POST 127.0.0.1:8000/predict - возвращает JSON содержаций ц�
 ## 6. Данные для модели.
 
 Метод POST 127.0.0.1:8000/predict принимает JSON структуру следующего вида
-![alt text](https://github.com/MikhailNebasov/api_for_marketplace_product_category_classification/blob/main/structure.png)
+
+![alt text](https://github.com/MikhailNebasov/api_for_marketplace_product_category_classification/blob/main/structure.png?raw=true)
 {
     "product_id": 1997646,
     "sale": "False",
