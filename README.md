@@ -18,9 +18,9 @@ API реализовано с использованием Uvicorn (ASGI веб 
 
 ## 5. Методы.
 
-GET 127.0.0.1:8000/status - возвращает JSON содержащий "I'm OK" если сервер запущен и исправно функционирует.
+GET /status - возвращает JSON содержащий "I'm OK" если сервер запущен и исправно функционирует.
 
-GET 127.0.0.1:8000/version - возвращает JSON содержащий информацию о модели вида {
+GET /version - возвращает JSON содержащий информацию о модели вида {
     "name": "Marketplace product category classification",
     "author": "Mikhail Nebasov",
     "version": "1.0.0",
@@ -29,13 +29,13 @@ GET 127.0.0.1:8000/version - возвращает JSON содержащий ин
     "result": 0.8758671713413593
 }
 
-POST 127.0.0.1:8000/predict - возвращает JSON содержаций цифровой идентификатор категории товара вида {
+POST /predict - возвращает JSON содержаций цифровой идентификатор категории товара вида {
     "prediction": 13495
 }
 
 ## 6. Данные для модели.
 
-Метод POST 127.0.0.1:8000/predict принимает JSON структуру следующего вида
+Метод POST /predict принимает JSON структуру следующего вида
 
 ![alt text](https://github.com/MikhailNebasov/api_for_marketplace_product_category_classification/blob/main/structure.png?raw=true)
 
