@@ -35,7 +35,7 @@ POST /predict - возвращает JSON содержаций цифровой 
 
 ## 6. Данные для модели.
 
-Метод POST /predict передает JSON структуру следующего вида
+Метод POST /predict передает JSON следующего вида
 
 ![alt text](https://github.com/MikhailNebasov/api_for_marketplace_product_category_classification/blob/main/structure.png?raw=true)
 
