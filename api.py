@@ -22,7 +22,7 @@ app = FastAPI()
 
 file_name = 'nlp_model.pkl'
 with open(file_name, 'rb') as file:
-    data = dill.load(file)
+    model = dill.load(file)
 
 
 class Nlp_API():
@@ -34,7 +34,7 @@ class Nlp_API():
 
     @app.get('/version')
     def version():
-        return data['metadata']
+        return model['metadata']
 
 
     def prepare_data(dfr):
@@ -78,11 +78,7 @@ class Nlp_API():
 
     @app.post('/predict', response_model=Prediction)
     def predict(form: Form):
-        temp = form.model_dump()
-        X = Nlp_API.prepare_data(temp)
-        X_count = data['stage1'].transform(X)
-        X_tfidf = data['stage2'].transform(X_count)
-        return {'prediction': data['model'].predict(X_tfidf)}
+        return {'prediction': model['model'].predict(model['stage2'].transform(model['stage1'].transform(Nlp_API.prepare_data(form.model_dump()))))}
 
 
 uvicorn.run(app, host="127.0.0.1", port=8000)
